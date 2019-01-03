@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZ5-aQ-IaD" userLabel="loginJaneButton">
+                                <rect key="frame" x="44.5" y="431" width="325" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Login Jane" backgroundImage="loginButtonBackground"/>
+                                <connections>
+                                    <action selector="didPressLoginJaneButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ovP-4p-QhL"/>
+                                    <segue destination="cr1-ss-xi7" kind="show" id="1Cf-4n-04O"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="elT-Ge-SsX" userLabel="loginJoeButton">
+                                <rect key="frame" x="44.5" y="483" width="325" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Login Joe" backgroundImage="loginButtonBackground"/>
+                                <connections>
+                                    <action selector="didPressLoginJoeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CFJ-zn-8qI"/>
+                                    <segue destination="cr1-ss-xi7" kind="show" id="QgL-2M-l1M"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="lVZ-U4-Wi2">
+                                <rect key="frame" x="16" y="132" width="382" height="110"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0099052963778376579" green="0.85357290506362915" blue="0.97214454412460327" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="elT-Ge-SsX" firstAttribute="width" secondItem="TZ5-aQ-IaD" secondAttribute="width" id="6p0-JR-GZD"/>
+                            <constraint firstItem="TZ5-aQ-IaD" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="ACc-Ir-8jd"/>
+                            <constraint firstItem="TZ5-aQ-IaD" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="RPH-8U-QrJ"/>
+                            <constraint firstItem="elT-Ge-SsX" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="RxC-on-jBC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lVZ-U4-Wi2" secondAttribute="trailing" constant="16" id="SQJ-dU-0no"/>
+                            <constraint firstItem="lVZ-U4-Wi2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="UNK-u2-knH"/>
+                            <constraint firstItem="lVZ-U4-Wi2" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="W1H-Sp-xRH"/>
+                            <constraint firstItem="TZ5-aQ-IaD" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="doY-oR-CLe"/>
+                            <constraint firstItem="elT-Ge-SsX" firstAttribute="top" secondItem="TZ5-aQ-IaD" secondAttribute="bottom" constant="8" id="hAf-dZ-vWM"/>
+                            <constraint firstItem="TZ5-aQ-IaD" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ht4-5M-prV"/>
+                            <constraint firstItem="lVZ-U4-Wi2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="88" id="ktG-sz-HE9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="27.436281859070466"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="1Dh-ps-ixJ">
+            <objects>
+                <viewController id="cr1-ss-xi7" userLabel="Main View Controller" customClass="MainViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZZE-Nk-gCL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Jxs-OD-PFm">
+                                <rect key="frame" x="16" y="132" width="382" height="110"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7IY-0S-BcY" userLabel="makeCallView">
+                                <rect key="frame" x="0.0" y="332" width="414" height="242"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ECv-xU-lpL" userLabel="nameLabel">
+                                        <rect key="frame" x="146.5" y="16" width="121" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connection Status: status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWS-yT-x8k" userLabel="connectionStatusLabel">
+                                        <rect key="frame" x="73.5" y="61" width="267" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EX0-F9-apd" userLabel="callOtherButton">
+                                        <rect key="frame" x="44.5" y="122" width="325" height="44"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" title="Call Other" backgroundImage="loginButtonBackground"/>
+                                        <connections>
+                                            <action selector="didCallOtherButtonPress:" destination="cr1-ss-xi7" eventType="touchUpInside" id="owd-vH-5dW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cky-Ob-xmX" userLabel="logoutButton">
+                                        <rect key="frame" x="44.5" y="182" width="325" height="44"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" title="Logout" backgroundImage="loginButtonBackground"/>
+                                        <connections>
+                                            <action selector="didLogoutButtonPress:" destination="cr1-ss-xi7" eventType="touchUpInside" id="tWd-JV-WtT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="EX0-F9-apd" firstAttribute="centerX" secondItem="7IY-0S-BcY" secondAttribute="centerX" id="21J-9C-UIl"/>
+                                    <constraint firstItem="KWS-yT-x8k" firstAttribute="top" secondItem="ECv-xU-lpL" secondAttribute="bottom" constant="16" id="IbU-1j-zET"/>
+                                    <constraint firstItem="ECv-xU-lpL" firstAttribute="top" secondItem="7IY-0S-BcY" secondAttribute="top" constant="16" id="bE9-fX-b55"/>
+                                    <constraint firstItem="EX0-F9-apd" firstAttribute="top" secondItem="KWS-yT-x8k" secondAttribute="bottom" constant="32" id="gAN-He-QXE"/>
+                                    <constraint firstItem="KWS-yT-x8k" firstAttribute="centerX" secondItem="7IY-0S-BcY" secondAttribute="centerX" id="hSV-8n-4Ag"/>
+                                    <constraint firstItem="cky-Ob-xmX" firstAttribute="top" secondItem="EX0-F9-apd" secondAttribute="bottom" constant="16" id="r8R-Of-1rg"/>
+                                    <constraint firstAttribute="bottom" secondItem="cky-Ob-xmX" secondAttribute="bottom" constant="16" id="tlM-rl-Ha8"/>
+                                    <constraint firstItem="ECv-xU-lpL" firstAttribute="centerX" secondItem="7IY-0S-BcY" secondAttribute="centerX" id="xow-0T-1ek"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lpg-rT-eET" userLabel="inCallView">
+                                <rect key="frame" x="0.0" y="764" width="414" height="98"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZwJ-aJ-zaS" userLabel="endButton">
+                                        <rect key="frame" x="137" y="16" width="140" height="66"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" backgroundImage="buttonEnd"/>
+                                        <connections>
+                                            <action selector="didEndButtonPress:" destination="cr1-ss-xi7" eventType="touchUpInside" id="2bl-zW-6RM"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ZwJ-aJ-zaS" firstAttribute="centerY" secondItem="lpg-rT-eET" secondAttribute="centerY" id="1gi-91-4kH"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZwJ-aJ-zaS" secondAttribute="bottom" constant="16" id="OMw-iU-Zia"/>
+                                    <constraint firstItem="ZwJ-aJ-zaS" firstAttribute="centerX" secondItem="lpg-rT-eET" secondAttribute="centerX" id="rGE-VW-RZs"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0099052963778376579" green="0.85357290506362915" blue="0.97214454412460327" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="lpg-rT-eET" firstAttribute="leading" secondItem="K9k-xn-A9U" secondAttribute="leading" id="8oM-I6-ugi"/>
+                            <constraint firstItem="K9k-xn-A9U" firstAttribute="bottom" secondItem="lpg-rT-eET" secondAttribute="bottom" id="A6K-3B-JMF"/>
+                            <constraint firstItem="7IY-0S-BcY" firstAttribute="leading" secondItem="K9k-xn-A9U" secondAttribute="leading" id="DnZ-XS-03e"/>
+                            <constraint firstItem="K9k-xn-A9U" firstAttribute="trailing" secondItem="lpg-rT-eET" secondAttribute="trailing" id="JhD-jF-Q2l"/>
+                            <constraint firstItem="K9k-xn-A9U" firstAttribute="trailing" secondItem="Jxs-OD-PFm" secondAttribute="trailing" constant="16" id="PWG-Li-1kB"/>
+                            <constraint firstItem="cky-Ob-xmX" firstAttribute="centerX" secondItem="K9k-xn-A9U" secondAttribute="centerX" id="QfM-d7-Tl1"/>
+                            <constraint firstItem="Jxs-OD-PFm" firstAttribute="top" secondItem="K9k-xn-A9U" secondAttribute="top" constant="88" id="SMN-vs-c4k"/>
+                            <constraint firstItem="7IY-0S-BcY" firstAttribute="centerY" secondItem="K9k-xn-A9U" secondAttribute="centerY" id="Zyc-BA-GXi"/>
+                            <constraint firstItem="7IY-0S-BcY" firstAttribute="centerX" secondItem="K9k-xn-A9U" secondAttribute="centerX" id="rCx-XI-Mg4"/>
+                            <constraint firstItem="Jxs-OD-PFm" firstAttribute="leading" secondItem="K9k-xn-A9U" secondAttribute="leading" constant="16" id="s4X-MB-Ek7"/>
+                            <constraint firstItem="Jxs-OD-PFm" firstAttribute="centerX" secondItem="K9k-xn-A9U" secondAttribute="centerX" id="wNW-Dk-rJv"/>
+                            <constraint firstItem="K9k-xn-A9U" firstAttribute="trailing" secondItem="7IY-0S-BcY" secondAttribute="trailing" id="zFg-TO-CQb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="K9k-xn-A9U"/>
+                    </view>
+                    <connections>
+                        <outlet property="callOtherButton" destination="EX0-F9-apd" id="avN-W1-qi0"/>
+                        <outlet property="connectionStatusLabel" destination="KWS-yT-x8k" id="s76-Pe-4lZ"/>
+                        <outlet property="inCallView" destination="lpg-rT-eET" id="F8h-mR-H2z"/>
+                        <outlet property="makeCallView" destination="7IY-0S-BcY" id="hHB-mL-M71"/>
+                        <outlet property="nameLabel" destination="ECv-xU-lpL" id="MfI-gE-edC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4u2-Ef-kcy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1044.9275362318842" y="26.785714285714285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="buttonEnd" width="140" height="66"/>
+        <image name="loginButtonBackground" width="325" height="44"/>
+        <image name="logo" width="329" height="110"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="1Cf-4n-04O"/>
+    </inferredMetricsTieBreakers>
+</document>
