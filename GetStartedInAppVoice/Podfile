@@ -1,4 +1,5 @@
-source 'git@github.com:CocoaPods/Specs.git'
+source 'git@github.com:Vonage/PrivateCocoapodsSpecs.git'
+# source 'git@github.com:CocoaPods/Specs.git'
 
 # Uncomment the next line to define a global platform for your project
 platform :ios, '10.0'
@@ -8,6 +9,6 @@ target 'GetStartedInAppVoice' do
   use_frameworks!
 
   # Pods for GetStartedInAppVoice
-  pod 'NexmoClient'
+  pod 'NexmoClient', '0.1.48'
 
 end

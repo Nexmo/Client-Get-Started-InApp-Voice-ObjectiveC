@@ -116,19 +116,27 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lpg-rT-eET" userLabel="inCallView">
-                                <rect key="frame" x="0.0" y="764" width="414" height="98"/>
+                                <rect key="frame" x="0.0" y="719" width="414" height="143"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZwJ-aJ-zaS" userLabel="endButton">
-                                        <rect key="frame" x="137" y="16" width="140" height="66"/>
+                                        <rect key="frame" x="137" y="61" width="140" height="66"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" backgroundImage="buttonEnd"/>
                                         <connections>
                                             <action selector="didEndButtonPress:" destination="cr1-ss-xi7" eventType="touchUpInside" id="2bl-zW-6RM"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Call Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AJX-5e-Hrf" userLabel="callStatusLabel">
+                                        <rect key="frame" x="151.5" y="16" width="111.5" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="ZwJ-aJ-zaS" firstAttribute="centerY" secondItem="lpg-rT-eET" secondAttribute="centerY" id="1gi-91-4kH"/>
+                                    <constraint firstItem="AJX-5e-Hrf" firstAttribute="top" secondItem="lpg-rT-eET" secondAttribute="top" constant="16" id="BWM-FX-jDo"/>
+                                    <constraint firstItem="ZwJ-aJ-zaS" firstAttribute="top" secondItem="AJX-5e-Hrf" secondAttribute="bottom" constant="16" id="FNj-cm-JAN"/>
+                                    <constraint firstItem="AJX-5e-Hrf" firstAttribute="centerX" secondItem="lpg-rT-eET" secondAttribute="centerX" id="FaA-Tg-XBE"/>
                                     <constraint firstAttribute="bottom" secondItem="ZwJ-aJ-zaS" secondAttribute="bottom" constant="16" id="OMw-iU-Zia"/>
                                     <constraint firstItem="ZwJ-aJ-zaS" firstAttribute="centerX" secondItem="lpg-rT-eET" secondAttribute="centerX" id="rGE-VW-RZs"/>
                                 </constraints>
@@ -153,6 +161,7 @@
                     </view>
                     <connections>
                         <outlet property="callOtherButton" destination="EX0-F9-apd" id="avN-W1-qi0"/>
+                        <outlet property="callStatusLabel" destination="AJX-5e-Hrf" id="zFN-u9-Aiu"/>
                         <outlet property="connectionStatusLabel" destination="KWS-yT-x8k" id="s76-Pe-4lZ"/>
                         <outlet property="inCallView" destination="lpg-rT-eET" id="F8h-mR-H2z"/>
                         <outlet property="makeCallView" destination="7IY-0S-BcY" id="hHB-mL-M71"/>

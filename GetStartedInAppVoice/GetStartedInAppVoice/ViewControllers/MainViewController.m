@@ -6,15 +6,16 @@
 //
 
 #import "MainViewController.h"
-
+#import "IVALogger.h"
 #import <NexmoClient/NexmoClient.h>
 
 @interface MainViewController () <NXMClientDelegate, NXMCallDelegate>
+@property (weak, nonatomic) IBOutlet UIView *makeCallView;
+@property (weak, nonatomic) IBOutlet UIView *inCallView;
 @property (weak, nonatomic) IBOutlet UIButton *callOtherButton;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *connectionStatusLabel;
-@property (weak, nonatomic) IBOutlet UIView *makeCallView;
-@property (weak, nonatomic) IBOutlet UIView *inCallView;
+@property (weak, nonatomic) IBOutlet UILabel *callStatusLabel;
 
 @property IAVUserDetails *selectedUser;
 @property IAVUserDetails *otherUser;
@@ -28,28 +29,34 @@
 @implementation MainViewController
 
 #pragma mark - setup
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self setupView];
-    [self setWithIsConnected:NO];
-    [self setupNexmoClient];
-}
 
 - (void)updateWithSelectedUser:(IAVUserDetails *)selectedUser andOtherUser:(IAVUserDetails *)otherUser {
     self.selectedUser = selectedUser;
     self.otherUser = otherUser;
 }
 
-- (void)setupView {
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self setupViews];
+    [self setWithIsConnected:NO];
+    [self setupNexmoClient];
+}
+
+- (void)setupViews {
     self.nameLabel.text = [@"Hello " stringByAppendingString:self.selectedUser.name];
-    
     [self.callOtherButton setTitle:[@"Call " stringByAppendingString:self.otherUser.name] forState:UIControlStateNormal];
-    
     self.isInCall = NO;
     [self setActiveViews];
 }
 
 - (void)setActiveViews {
+    if(![NSThread isMainThread]){
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self setActiveViews];
+        });
+        return;
+    }
+    
     if(self.isInCall) {
         self.makeCallView.hidden = YES;
         self.inCallView.hidden = NO;
@@ -76,74 +83,13 @@
     }
 }
 
--(void)setupNexmoClient {
-    self.nexmoClient = [[NXMClient alloc] init];
-    [self.nexmoClient setDelegate:self];
-    [self.nexmoClient loginWithAuthToken:self.selectedUser.token];
-}
-
 #pragma mark - User Input
 
 - (IBAction)didLogoutButtonPress:(UIButton *)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (IBAction)didCallOtherButtonPress:(UIButton *)sender {
-    self.isInCall = YES;
-    [self.nexmoClient call:@[self.otherUser.userId] callType:NXMCallTypeInApp delegate:self completion:^(NSError * _Nullable error, NXMCall * _Nullable call) {
-        if(error) {
-            self.isInCall = NO;
-            self.ongoingCall = nil;
-            return;
-        }
-        self.ongoingCall = call;
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self setActiveViews];
-        });
-    }];
-}
-
-- (IBAction)didEndButtonPress:(UIButton *)sender {
-    [self.ongoingCall hangup:^(NSError * _Nullable error) {
-        if(error) {
-            [self displayAlertWithTitle:@"Call Error" andMessage:@"Error while trying to hangup the call. Please try again"];
-            return;
-        }
-        
-        self.ongoingCall = nil;
-        self.isInCall = NO;
-        [self setActiveViews];
-    }];
-}
-
-#pragma mark - NXMClientDelegate
-- (void)connectionStatusChanged:(BOOL)isOnline {
-    [self setWithIsConnected:isOnline];
-}
-
-- (void)loginStatusChanged:(nullable NXMUser *)user loginStatus:(BOOL)isLoggedIn withError:(nullable NSError *)error {
-    if(error) {
-        [self displayAlertWithTitle:@"Login Error" andMessage:@"Error performing login. Please make sure your credentials are valid and your device is connected to the internet"];
-        
-        return;
-    }
-}
-
-- (void)tokenRefreshed {
-    //User succesfully refreshed token.
-}
-
-#pragma mark - NXMCallDelegate
-- (void)statusChanged:(NXMCallParticipant *)participant {
-    
-}
-
 #pragma mark - Alerts
-
-- (void)displayIncomingCallAlert {
-    
-}
-
 - (void)displayAlertWithTitle:(nonnull NSString *)title andMessage:(nonnull NSString *)message {
     if(![NSThread isMainThread]){
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -157,8 +103,167 @@
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
     
     [alertController addAction:defaultAction];
-
+    
     [self presentViewController:alertController animated:YES completion:nil];
 }
+
+
+#pragma mark - Tutorial Methods
+#pragma mark Setup
+- (void)setupNexmoClient {//Snippet
+    self.nexmoClient = [[NXMClient alloc] init];
+    [self.nexmoClient setDelegate:self];
+    [self.nexmoClient loginWithAuthToken:self.selectedUser.token];
+    [self.nexmoClient setLoggerDelegate:[IVALogger new]];
+}
+
+#pragma mark NXMClientDelegate
+- (void)connectionStatusChanged:(BOOL)isOnline {
+    //Socket network status changed
+}
+
+- (void)loginStatusChanged:(nullable NXMUser *)user loginStatus:(BOOL)isLoggedIn withError:(nullable NSError *)error {
+    if(error) {
+        [self displayAlertWithTitle:@"Login Error" andMessage:@"Error performing login. Please make sure your credentials are valid and your device is connected to the internet"];
+        
+        return;
+    }
+    
+    [self setWithIsConnected:YES];
+}
+
+- (void)tokenRefreshed {
+    //User succesfully refreshed token.
+}
+
+- (void)incomingCall:(nonnull NXMCall *)call {//Snippet
+    self.ongoingCall = call;
+    [self displayIncomingCallAlert];
+}
+
+#pragma mark Buttons
+- (IBAction)didCallOtherButtonPress:(UIButton *)sender {//Snippet
+    self.isInCall = YES;
+    [self.nexmoClient call:@[self.otherUser.userId] callType:NXMCallTypeInApp delegate:self completion:^(NSError * _Nullable error, NXMCall * _Nullable call) {
+        if(error) {
+            self.isInCall = NO;
+            self.ongoingCall = nil;
+            return;
+        }
+        self.ongoingCall = call;
+        [self setActiveViews];
+    }];
+}
+
+- (IBAction)didEndButtonPress:(UIButton *)sender {//Snippet
+    [self.ongoingCall.myParticipant hangup];
+}
+
+#pragma mark NXMCallDelegate
+- (void)statusChanged:(NXMCallParticipant *)participant {//Snippet
+    if(![participant.userId isEqualToString:self.selectedUser.userId]) {
+        return;
+    }
+    
+    [self updateCallStatusLabelWithStatus:participant.status];
+    
+    if(participant.status == NXMParticipantStatusCancelled || participant.status == NXMParticipantStatusCompleted) {
+        self.ongoingCall = nil;
+        self.isInCall = NO;
+        [self setActiveViews];
+    }
+}
+
+- (void)updateCallStatusLabelWithStatus:(NXMParticipantStatus)status {
+    if(![NSThread isMainThread]){
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self updateCallStatusLabelWithStatus:status];
+        });
+        return;
+    }
+    NSString *callStatusText = @"";
+    switch (status) {
+        case NXMParticipantStatusCancelled:
+            callStatusText = @"Call Cancelled";
+            break;
+        case NXMParticipantStatusCompleted:
+            callStatusText = @"Call Completed";
+            break;
+        case NXMParticipantStatusDialing:
+            callStatusText = @"Dialing";
+            break;
+        case NXMParticipantStatusCalling:
+            callStatusText = @"Calling";
+            break;
+        case NXMParticipantStatusStarted:
+            callStatusText = @"Call Started";
+            break;
+        case NXMParticipantStatusAnswered:
+            callStatusText = @"Answered";
+            break;
+        default:
+            break;
+    }
+    
+    self.callStatusLabel.text = callStatusText;
+}
+
+#pragma mark IncomingCall
+
+- (void)displayIncomingCallAlert {
+    if(![NSThread isMainThread]){
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self displayIncomingCallAlert];
+        });
+        return;
+    }
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Incoming Call"
+                                                                   message:self.otherUser.name
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    __weak MainViewController *weakSelf = self;
+    UIAlertAction* answerAction = [UIAlertAction actionWithTitle:@"Answer" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [weakSelf didPressAnswerIncomingCall];
+    }];
+    
+    UIAlertAction* declineAction = [UIAlertAction actionWithTitle:@"Decline" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [weakSelf didPressDeclineIncomingCall];
+    }];
+    
+    [alertController addAction:answerAction];
+    [alertController addAction:declineAction];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+- (void)didPressAnswerIncomingCall {
+    __weak MainViewController *weakSelf = self;
+    [weakSelf.ongoingCall answer:self completionHandler:^(NSError * _Nullable error) {
+        if(error) {
+            [weakSelf displayAlertWithTitle:@"Answer Call" andMessage:@"Error answering call"];
+            weakSelf.ongoingCall = nil;
+            weakSelf.isInCall = NO;
+            [weakSelf setActiveViews];
+            return;
+        }
+        
+        [weakSelf setActiveViews];
+    }];
+}
+
+- (void)didPressDeclineIncomingCall {
+    __weak MainViewController *weakSelf = self;
+    [weakSelf.ongoingCall decline:^(NSError * _Nullable error) {
+        if(error) {
+            [weakSelf displayAlertWithTitle:@"Decline Call" andMessage:@"Error declining call"];
+            return;
+        }
+        
+        weakSelf.ongoingCall = nil;
+        weakSelf.isInCall = NO;
+        [weakSelf setActiveViews];
+    }];
+}
+
 
 @end

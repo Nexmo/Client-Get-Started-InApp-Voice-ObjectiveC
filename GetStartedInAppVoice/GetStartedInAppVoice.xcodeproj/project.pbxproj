@@ -15,6 +15,7 @@
 		92C61D0A21DCE74C00D4D316 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C61D0921DCE74C00D4D316 /* main.m */; };
 		92C61D1821DD04F600D4D316 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C61D1721DD04F600D4D316 /* MainViewController.m */; };
 		92C61D2021DDE89300D4D316 /* IAVUserDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C61D1F21DDE89300D4D316 /* IAVUserDetails.m */; };
+		92C61D2A21DE4DE800D4D316 /* IVALogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C61D2921DE4DE800D4D316 /* IVALogger.m */; };
 		F853E02D4F8E814D5D341FB7 /* Pods_GetStartedInAppVoice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B87A92E29CD4F1C960AE9B25 /* Pods_GetStartedInAppVoice.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,8 @@
 		92C61D1721DD04F600D4D316 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		92C61D1E21DDE89300D4D316 /* IAVUserDetails.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IAVUserDetails.h; sourceTree = "<group>"; };
 		92C61D1F21DDE89300D4D316 /* IAVUserDetails.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IAVUserDetails.m; sourceTree = "<group>"; };
+		92C61D2821DE4DE800D4D316 /* IVALogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IVALogger.h; sourceTree = "<group>"; };
+		92C61D2921DE4DE800D4D316 /* IVALogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IVALogger.m; sourceTree = "<group>"; };
 		B87A92E29CD4F1C960AE9B25 /* Pods_GetStartedInAppVoice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GetStartedInAppVoice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2E4EC82891CC9B35FC88D2E /* Pods-GetStartedInAppVoice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetStartedInAppVoice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GetStartedInAppVoice/Pods-GetStartedInAppVoice.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,6 +113,8 @@
 				92C61D1521DD043700D4D316 /* IAVAppDefine.h */,
 				92C61D1E21DDE89300D4D316 /* IAVUserDetails.h */,
 				92C61D1F21DDE89300D4D316 /* IAVUserDetails.m */,
+				92C61D2821DE4DE800D4D316 /* IVALogger.h */,
+				92C61D2921DE4DE800D4D316 /* IVALogger.m */,
 			);
 			path = AppCode;
 			sourceTree = "<group>";
@@ -236,6 +241,7 @@
 			files = (
 				92C61CFF21DCE74A00D4D316 /* LoginViewController.m in Sources */,
 				92C61D0A21DCE74C00D4D316 /* main.m in Sources */,
+				92C61D2A21DE4DE800D4D316 /* IVALogger.m in Sources */,
 				92C61D2021DDE89300D4D316 /* IAVUserDetails.m in Sources */,
 				92C61CFC21DCE74A00D4D316 /* AppDelegate.m in Sources */,
 				92C61D1821DD04F600D4D316 /* MainViewController.m in Sources */,
