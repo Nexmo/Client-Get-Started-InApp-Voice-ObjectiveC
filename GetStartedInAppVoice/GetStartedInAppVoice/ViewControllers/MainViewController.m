@@ -38,7 +38,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupViews];
-    [self setWithIsConnected:NO];
+    [self setWithConnectionStatus:NXMConnectionStatusDisconnected];
     [self setupNexmoClient];
 }
 
@@ -66,20 +66,30 @@
     }
 }
 
-- (void)setWithIsConnected:(BOOL)isConnected {
+- (void)setWithConnectionStatus:(NXMConnectionStatus)conenctionStatus {
     if(![NSThread isMainThread]){
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self setWithIsConnected:isConnected];
+            [self setWithConnectionStatus:conenctionStatus];
         });
         return;
     }
+
     
-    if(isConnected) {
-        self.callOtherButton.enabled = YES;
-        self.connectionStatusLabel.text = @"Connection Status: connected";
-    } else {
-        self.callOtherButton.enabled = NO;
-        self.connectionStatusLabel.text = @"Connection Status: not connected";
+    switch (conenctionStatus) {
+        case NXMConnectionStatusDisconnected:
+            self.callOtherButton.enabled = NO;
+            self.connectionStatusLabel.text = @"Connection Status: not connected";
+            break;
+            case NXMConnectionStatusConnecting:
+            self.callOtherButton.enabled = NO;
+            self.connectionStatusLabel.text = @"Connection Status: connecting";
+            break;
+            case NXMConnectionStatusConnected:
+            self.callOtherButton.enabled = YES;
+            self.connectionStatusLabel.text = @"Connection Status: connected";
+            break;
+        default:
+            break;
     }
 }
 
@@ -111,29 +121,16 @@
 #pragma mark - Tutorial Methods
 #pragma mark Setup
 - (void)setupNexmoClient {//Snippet
-    self.nexmoClient = [[NXMClient alloc] init];
+    self.nexmoClient = [[NXMClient alloc] initWithToken:self.selectedUser.token];
     [self.nexmoClient setDelegate:self];
-    [self.nexmoClient loginWithAuthToken:self.selectedUser.token];
+    [self.nexmoClient login];
     [self.nexmoClient setLoggerDelegate:[IVALogger new]];
 }
 
 #pragma mark NXMClientDelegate
-- (void)connectionStatusChanged:(BOOL)isOnline {
-    //Socket network status changed
-}
-
-- (void)loginStatusChanged:(nullable NXMUser *)user loginStatus:(BOOL)isLoggedIn withError:(nullable NSError *)error {
-    if(error) {
-        [self displayAlertWithTitle:@"Login Error" andMessage:@"Error performing login. Please make sure your credentials are valid and your device is connected to the internet"];
-        
-        return;
-    }
+- (void)connectionStatusChanged:(NXMConnectionStatus)status reason:(NXMConnectionStatusReason)reason {
+    [self setWithConnectionStatus:status];
     
-    [self setWithIsConnected:YES];
-}
-
-- (void)tokenRefreshed {
-    //User succesfully refreshed token.
 }
 
 - (void)incomingCall:(nonnull NXMCall *)call {//Snippet
@@ -161,16 +158,26 @@
 
 #pragma mark NXMCallDelegate
 - (void)statusChanged:(NXMCallParticipant *)participant {//Snippet
-    if(![participant.userId isEqualToString:self.selectedUser.userId]) {
-        return;
+    if([participant.userId isEqualToString:self.selectedUser.userId]) {
+        [self statusChangedForMyParticipant:participant];
+    } else {
+        [self statusChangedForOtherParticipant:participant];
     }
+}
+
+- (void)statusChangedForMyParticipant:(NXMCallParticipant *)myParticipant {
+    [self updateCallStatusLabelWithStatus:myParticipant.status];
     
-    [self updateCallStatusLabelWithStatus:participant.status];
-    
-    if(participant.status == NXMParticipantStatusCancelled || participant.status == NXMParticipantStatusCompleted) {
+    if(myParticipant.status == NXMParticipantStatusCancelled || myParticipant.status == NXMParticipantStatusCompleted) {
         self.ongoingCall = nil;
         self.isInCall = NO;
         [self setActiveViews];
+    }
+}
+
+- (void)statusChangedForOtherParticipant:(NXMCallParticipant *)myParticipant {
+    if(myParticipant.status == NXMParticipantStatusCancelled || myParticipant.status == NXMParticipantStatusCompleted) {
+        [self.ongoingCall.myParticipant hangup];
     }
 }
 
@@ -247,6 +254,7 @@
             return;
         }
         
+        self.isInCall = YES;
         [weakSelf setActiveViews];
     }];
 }

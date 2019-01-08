@@ -6,9 +6,9 @@
 //
 
 #define kInAppVoiceJaneName @"Jane"
-#define kInAppVoiceJaneUserId @"JANE_USER_ID" //TODO: swap with a userId for Jane
-#define kInAppVoiceJaneToken @"JANE_TOKEN" //TODO: swap with a token for Jane
+#define kInAppVoiceJaneUserId @"USR-a7862767-e77a-4c0d-9bea-41754f1918c0" //TODO: swap with a userId for Jane
+#define kInAppVoiceJaneToken @"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJJbHR1cyIsImlhdCI6MTU0NjkzODMwMiwibmJmIjoxNTQ2OTM4MzAyLCJleHAiOjE1NDY5NjgzMzIsImp0aSI6MTU0NjkzODMzMjYyNCwiYXBwbGljYXRpb25faWQiOiJmMWE1ZjZmYS03ZDc0LTRiOTctYmRmNC00ZWNhYWU4ZTg1MWUiLCJhY2wiOnsicGF0aHMiOnsiLyoqIjp7fX19LCJzdWIiOiJ0ZXN0dXNlcjgifQ.jQjm7pG_s3lKKSws5KsUdtbj9bNDVu1sD4WbALBGIK-gYgNLsiIPoMLE4sSZdNGirLMbQ0HJ5qabI3hqu4-4C35Lklv3i35IWowREhk81UI5s_wGlljfUoQcl8ToNCCF5MN6dAlksaxLIfTSpb0R3C5gYI6QE_S151i6IVw1m2IZlL3B-KAjLjumDJg2v_duUbnuzvi_qApJBvX0cFKR9b9cZkVFpwwnzFP-Hpq1cl93QercYe40pI6RvTVf9hmMiRfKJbdVEWsselIzJRHtb-tbuVRt2QEQhtneAdVFhb1NSdmQV0nqde_GlgV8PLpC1R8wlsprG8eP1uC-VA5L0w" //TODO: swap with a token for Jane
 
 #define kInAppVoiceJoeName @"Joe"
-#define kInAppVoiceJoeUserId @"JOE_USER_ID" //TODO: swap with a userId for Joe
-#define kInAppVoiceJoeToken @"JOE_TOKEN" //TODO: swap with a token for Joe
+#define kInAppVoiceJoeUserId @"USR-0bff641c-9751-473b-84fc-350e8cf2d249" //TODO: swap with a userId for Joe
+#define kInAppVoiceJoeToken @"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJJbHR1cyIsImlhdCI6MTU0NjkzODMyMiwibmJmIjoxNTQ2OTM4MzIyLCJleHAiOjE1NDY5NjgzNTIsImp0aSI6MTU0NjkzODM1MjkwNSwiYXBwbGljYXRpb25faWQiOiJmMWE1ZjZmYS03ZDc0LTRiOTctYmRmNC00ZWNhYWU4ZTg1MWUiLCJhY2wiOnsicGF0aHMiOnsiLyoqIjp7fX19LCJzdWIiOiJ0ZXN0dXNlcjkifQ.uYdL4jSVmuqWOsCghTzG-uB67h-TVpwEmHdrl6lfy_UcrP5S_C_7NSA4plkmbmF4b8J3yZVvbRIPX8aAReP7_ekEC2kJPISZ5fVt_O9gOnOJ3TrJLEZn-pG57Y9LUjKL_lqeYh0FXokPwIA_PaFWof_AZ5wa_1F0OnjePvtz7vgUfxo5gPF5YfPoV4nuTbHt7YCTytWChNSzy9sAi9uf_hlLc2OLneakfm6wG16Xwr-xBu9ZV5Z-JR6itWu7AMllCzQxNmlaoGa4kWd0wbSI5S4RRKrqf83g7Cb6YF_r2AlscDPR32ZJhJMVxT9j3QsY6MgFwEa5cDgqE6VjuL3_qQ" //TODO: swap with a token for Joe

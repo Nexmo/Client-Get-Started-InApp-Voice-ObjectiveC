@@ -9,6 +9,6 @@ target 'GetStartedInAppVoice' do
   use_frameworks!
 
   # Pods for GetStartedInAppVoice
-  pod 'NexmoClient', '0.1.48'
+  pod 'NexmoClient'
 
 end

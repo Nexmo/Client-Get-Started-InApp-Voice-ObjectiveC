@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "InCall-Button-Decline-pressed.png",
+      "filename" : "btnEndCall.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "InCall-Button-Decline-pressed@2x.png",
+      "filename" : "btnEndCall@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "InCall-Button-Decline-pressed@2x-1.png",
+      "filename" : "btnEndCall@3x.png",
       "scale" : "3x"
     }
   ],

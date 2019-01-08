@@ -116,10 +116,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lpg-rT-eET" userLabel="inCallView">
-                                <rect key="frame" x="0.0" y="719" width="414" height="143"/>
+                                <rect key="frame" x="0.0" y="713" width="414" height="149"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZwJ-aJ-zaS" userLabel="endButton">
-                                        <rect key="frame" x="137" y="61" width="140" height="66"/>
+                                        <rect key="frame" x="171" y="61" width="72" height="72"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" backgroundImage="buttonEnd"/>
                                         <connections>
@@ -174,7 +174,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="buttonEnd" width="140" height="66"/>
+        <image name="buttonEnd" width="72" height="72"/>
         <image name="loginButtonBackground" width="325" height="44"/>
         <image name="logo" width="329" height="110"/>
     </resources>
