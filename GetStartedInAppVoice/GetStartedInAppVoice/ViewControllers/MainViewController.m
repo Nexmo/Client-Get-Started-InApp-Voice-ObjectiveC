@@ -6,7 +6,6 @@
 //
 
 #import "MainViewController.h"
-#import "IVALogger.h"
 #import <NexmoClient/NexmoClient.h>
 
 @interface MainViewController () <NXMClientDelegate, NXMCallDelegate>
@@ -124,13 +123,11 @@
     self.nexmoClient = [[NXMClient alloc] initWithToken:self.selectedUser.token];
     [self.nexmoClient setDelegate:self];
     [self.nexmoClient login];
-    [self.nexmoClient setLoggerDelegate:[IVALogger new]];
 }
 
 #pragma mark NXMClientDelegate
 - (void)connectionStatusChanged:(NXMConnectionStatus)status reason:(NXMConnectionStatusReason)reason {
     [self setWithConnectionStatus:status];
-    
 }
 
 - (void)incomingCall:(nonnull NXMCall *)call {//Snippet
@@ -165,7 +162,7 @@
     }
 }
 
-- (void)statusChangedForMyParticipant:(NXMCallParticipant *)myParticipant {
+- (void)statusChangedForMyParticipant:(NXMCallParticipant *)myParticipant {//snippet
     [self updateCallStatusLabelWithStatus:myParticipant.status];
     
     if(myParticipant.status == NXMParticipantStatusCancelled || myParticipant.status == NXMParticipantStatusCompleted) {
@@ -175,7 +172,7 @@
     }
 }
 
-- (void)statusChangedForOtherParticipant:(NXMCallParticipant *)myParticipant {
+- (void)statusChangedForOtherParticipant:(NXMCallParticipant *)myParticipant {//snippet
     if(myParticipant.status == NXMParticipantStatusCancelled || myParticipant.status == NXMParticipantStatusCompleted) {
         [self.ongoingCall.myParticipant hangup];
     }
