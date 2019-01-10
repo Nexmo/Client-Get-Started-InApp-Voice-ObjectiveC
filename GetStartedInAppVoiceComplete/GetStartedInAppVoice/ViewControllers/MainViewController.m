@@ -45,6 +45,7 @@
     self.nameLabel.text = [@"Hello " stringByAppendingString:self.selectedUser.name];
     [self.callOtherButton setTitle:[@"Call " stringByAppendingString:self.otherUser.name] forState:UIControlStateNormal];
     self.isInCall = NO;
+    [self updateCallStatusLabelWithText:@""];
     [self setActiveViews];
 }
 
@@ -142,6 +143,7 @@
         if(error) {
             self.isInCall = NO;
             self.ongoingCall = nil;
+            [self updateCallStatusLabelWithText:@""];
             return;
         }
         self.ongoingCall = call;
@@ -169,6 +171,7 @@
     if(myMember.status == NXMCallMemberStatusCancelled || myMember.status == NXMCallMemberStatusCompleted) {
         self.ongoingCall = nil;
         self.isInCall = NO;
+        [self updateCallStatusLabelWithText:@""];
         [self setActiveViews];
     }
 }
@@ -179,13 +182,18 @@
     }
 }
 
-- (void)updateCallStatusLabelWithStatus:(NXMCallMemberStatus)status {
+- (void)updateCallStatusLabelWithText:(NSString *)text {
     if(![NSThread isMainThread]){
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self updateCallStatusLabelWithStatus:status];
+            [self updateCallStatusLabelWithText:text];
         });
         return;
     }
+    self.callStatusLabel.text = text;
+}
+
+- (void)updateCallStatusLabelWithStatus:(NXMCallMemberStatus)status {
+    
     NSString *callStatusText = @"";
     switch (status) {
         case NXMCallMemberStatusCancelled:
@@ -210,7 +218,7 @@
             break;
     }
     
-    self.callStatusLabel.text = callStatusText;
+    [self updateCallStatusLabelWithText:callStatusText];
 }
 
 #pragma mark IncomingCall
@@ -248,6 +256,7 @@
             [weakSelf displayAlertWithTitle:@"Answer Call" andMessage:@"Error answering call"];
             weakSelf.ongoingCall = nil;
             weakSelf.isInCall = NO;
+            [self updateCallStatusLabelWithText:@""];
             [weakSelf setActiveViews];
             return;
         }
@@ -267,6 +276,7 @@
         
         weakSelf.ongoingCall = nil;
         weakSelf.isInCall = NO;
+        [self updateCallStatusLabelWithText:@""];
         [weakSelf setActiveViews];
     }];
 }
