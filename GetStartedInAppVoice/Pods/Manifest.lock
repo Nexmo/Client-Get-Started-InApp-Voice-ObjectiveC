@@ -1,0 +1,16 @@
+PODS:
+  - NexmoClient (0.1.52)
+
+DEPENDENCIES:
+  - NexmoClient
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - NexmoClient
+
+SPEC CHECKSUMS:
+  NexmoClient: ceeba20ec74250ee0214ba28f9bc1b7ddc94f034
+
+PODFILE CHECKSUM: 080ea73a88e8fbd10de1df390ed34be762f1a182
+
+COCOAPODS: 1.5.3
