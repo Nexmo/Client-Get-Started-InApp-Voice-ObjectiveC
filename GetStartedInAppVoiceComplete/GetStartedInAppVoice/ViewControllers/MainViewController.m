@@ -165,6 +165,7 @@
 - (void)statusChangedForMyParticipant:(NXMCallParticipant *)myParticipant {
     [self updateCallStatusLabelWithStatus:myParticipant.status];
     
+    //Handle Hangup
     if(myParticipant.status == NXMParticipantStatusCancelled || myParticipant.status == NXMParticipantStatusCompleted) {
         self.ongoingCall = nil;
         self.isInCall = NO;
