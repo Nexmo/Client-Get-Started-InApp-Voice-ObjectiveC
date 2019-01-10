@@ -119,7 +119,7 @@
 
 #pragma mark - Tutorial Methods
 #pragma mark Setup
-- (void)setupNexmoClient {//Snippet
+- (void)setupNexmoClient {
     self.nexmoClient = [[NXMClient alloc] initWithToken:self.selectedUser.token];
     [self.nexmoClient setDelegate:self];
     [self.nexmoClient login];
@@ -130,13 +130,13 @@
     [self setWithConnectionStatus:status];
 }
 
-- (void)incomingCall:(nonnull NXMCall *)call {//Snippet
+- (void)incomingCall:(nonnull NXMCall *)call {
     self.ongoingCall = call;
     [self displayIncomingCallAlert];
 }
 
 #pragma mark Buttons
-- (IBAction)didCallOtherButtonPress:(UIButton *)sender {//Snippet
+- (IBAction)didCallOtherButtonPress:(UIButton *)sender {
     self.isInCall = YES;
     [self.nexmoClient call:@[self.otherUser.userId] callType:NXMCallTypeInApp delegate:self completion:^(NSError * _Nullable error, NXMCall * _Nullable call) {
         if(error) {
@@ -149,12 +149,12 @@
     }];
 }
 
-- (IBAction)didEndButtonPress:(UIButton *)sender {//Snippet
+- (IBAction)didEndButtonPress:(UIButton *)sender {
     [self.ongoingCall.myParticipant hangup];
 }
 
 #pragma mark NXMCallDelegate
-- (void)statusChanged:(NXMCallParticipant *)participant {//Snippet
+- (void)statusChanged:(NXMCallParticipant *)participant {
     if([participant.userId isEqualToString:self.selectedUser.userId]) {
         [self statusChangedForMyParticipant:participant];
     } else {
@@ -162,7 +162,7 @@
     }
 }
 
-- (void)statusChangedForMyParticipant:(NXMCallParticipant *)myParticipant {//snippet
+- (void)statusChangedForMyParticipant:(NXMCallParticipant *)myParticipant {
     [self updateCallStatusLabelWithStatus:myParticipant.status];
     
     if(myParticipant.status == NXMParticipantStatusCancelled || myParticipant.status == NXMParticipantStatusCompleted) {
@@ -172,7 +172,7 @@
     }
 }
 
-- (void)statusChangedForOtherParticipant:(NXMCallParticipant *)myParticipant {//snippet
+- (void)statusChangedForOtherParticipant:(NXMCallParticipant *)myParticipant {
     if(myParticipant.status == NXMParticipantStatusCancelled || myParticipant.status == NXMParticipantStatusCompleted) {
         [self.ongoingCall.myParticipant hangup];
     }
