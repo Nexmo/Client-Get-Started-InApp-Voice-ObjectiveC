@@ -150,36 +150,36 @@
 }
 
 - (IBAction)didEndButtonPress:(UIButton *)sender {
-    [self.ongoingCall.myParticipant hangup];
+    [self.ongoingCall.myCallMember hangup];
 }
 
 #pragma mark NXMCallDelegate
-- (void)statusChanged:(NXMCallParticipant *)participant {
-    if([participant.userId isEqualToString:self.selectedUser.userId]) {
-        [self statusChangedForMyParticipant:participant];
+- (void)statusChanged:(NXMCallMember *)callMember {
+    if([callMember.userId isEqualToString:self.selectedUser.userId]) {
+        [self statusChangedForMyMember:callMember];
     } else {
-        [self statusChangedForOtherParticipant:participant];
+        [self statusChangedForOtherMember:callMember];
     }
 }
 
-- (void)statusChangedForMyParticipant:(NXMCallParticipant *)myParticipant {
-    [self updateCallStatusLabelWithStatus:myParticipant.status];
+- (void)statusChangedForMyMember:(NXMCallMember *)myMember {
+    [self updateCallStatusLabelWithStatus:myMember.status];
     
     //Handle Hangup
-    if(myParticipant.status == NXMParticipantStatusCancelled || myParticipant.status == NXMParticipantStatusCompleted) {
+    if(myMember.status == NXMCallMemberStatusCancelled || myMember.status == NXMCallMemberStatusCompleted) {
         self.ongoingCall = nil;
         self.isInCall = NO;
         [self setActiveViews];
     }
 }
 
-- (void)statusChangedForOtherParticipant:(NXMCallParticipant *)myParticipant {
-    if(myParticipant.status == NXMParticipantStatusCancelled || myParticipant.status == NXMParticipantStatusCompleted) {
-        [self.ongoingCall.myParticipant hangup];
+- (void)statusChangedForOtherMember:(NXMCallMember *)otherMember {
+    if(otherMember.status == NXMCallMemberStatusCancelled || otherMember.status == NXMCallMemberStatusCompleted) {
+        [self.ongoingCall.myCallMember hangup];
     }
 }
 
-- (void)updateCallStatusLabelWithStatus:(NXMParticipantStatus)status {
+- (void)updateCallStatusLabelWithStatus:(NXMCallMemberStatus)status {
     if(![NSThread isMainThread]){
         dispatch_async(dispatch_get_main_queue(), ^{
             [self updateCallStatusLabelWithStatus:status];
@@ -188,22 +188,22 @@
     }
     NSString *callStatusText = @"";
     switch (status) {
-        case NXMParticipantStatusCancelled:
+        case NXMCallMemberStatusCancelled:
             callStatusText = @"Call Cancelled";
             break;
-        case NXMParticipantStatusCompleted:
+        case NXMCallMemberStatusCompleted:
             callStatusText = @"Call Completed";
             break;
-        case NXMParticipantStatusDialing:
+        case NXMCallMemberStatusDialling:
             callStatusText = @"Dialing";
             break;
-        case NXMParticipantStatusCalling:
+        case NXMCallMemberStatusCalling:
             callStatusText = @"Calling";
             break;
-        case NXMParticipantStatusStarted:
+        case NXMCallMemberStatusStarted:
             callStatusText = @"Call Started";
             break;
-        case NXMParticipantStatusAnswered:
+        case NXMCallMemberStatusAnswered:
             callStatusText = @"Answered";
             break;
         default:
