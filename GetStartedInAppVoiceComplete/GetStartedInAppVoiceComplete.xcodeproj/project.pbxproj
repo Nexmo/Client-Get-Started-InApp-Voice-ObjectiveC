@@ -20,7 +20,7 @@
 
 /* Begin PBXFileReference section */
 		0FAC36952C01E760EA418FF9 /* Pods-GetStartedInAppVoice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetStartedInAppVoice.release.xcconfig"; path = "Pods/Target Support Files/Pods-GetStartedInAppVoice/Pods-GetStartedInAppVoice.release.xcconfig"; sourceTree = "<group>"; };
-		92C61CF721DCE74A00D4D316 /* GetStartedInAppVoice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetStartedInAppVoice.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		92C61CF721DCE74A00D4D316 /* GetStartedInAppVoiceComplete.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetStartedInAppVoiceComplete.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92C61CFA21DCE74A00D4D316 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		92C61CFB21DCE74A00D4D316 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		92C61CFD21DCE74A00D4D316 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -72,7 +72,7 @@
 		92C61CF821DCE74A00D4D316 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				92C61CF721DCE74A00D4D316 /* GetStartedInAppVoice.app */,
+				92C61CF721DCE74A00D4D316 /* GetStartedInAppVoiceComplete.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -126,9 +126,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		92C61CF621DCE74A00D4D316 /* GetStartedInAppVoice */ = {
+		92C61CF621DCE74A00D4D316 /* GetStartedInAppVoiceComplete */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 92C61D0D21DCE74C00D4D316 /* Build configuration list for PBXNativeTarget "GetStartedInAppVoice" */;
+			buildConfigurationList = 92C61D0D21DCE74C00D4D316 /* Build configuration list for PBXNativeTarget "GetStartedInAppVoiceComplete" */;
 			buildPhases = (
 				18F029E959BBFCFBD09B6786 /* [CP] Check Pods Manifest.lock */,
 				92C61CF321DCE74A00D4D316 /* Sources */,
@@ -140,9 +140,9 @@
 			);
 			dependencies = (
 			);
-			name = GetStartedInAppVoice;
+			name = GetStartedInAppVoiceComplete;
 			productName = GetStartedInAppVoice;
-			productReference = 92C61CF721DCE74A00D4D316 /* GetStartedInAppVoice.app */;
+			productReference = 92C61CF721DCE74A00D4D316 /* GetStartedInAppVoiceComplete.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -159,7 +159,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 92C61CF221DCE74A00D4D316 /* Build configuration list for PBXProject "GetStartedInAppVoice" */;
+			buildConfigurationList = 92C61CF221DCE74A00D4D316 /* Build configuration list for PBXProject "GetStartedInAppVoiceComplete" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -172,7 +172,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				92C61CF621DCE74A00D4D316 /* GetStartedInAppVoice */,
+				92C61CF621DCE74A00D4D316 /* GetStartedInAppVoiceComplete */,
 			);
 		};
 /* End PBXProject section */
@@ -390,7 +390,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nexmo.GetStartedInAppVoice;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nexmo.GetStartedInAppVoiceComplete;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -411,7 +411,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nexmo.GetStartedInAppVoice;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nexmo.GetStartedInAppVoiceComplete;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -421,7 +421,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		92C61CF221DCE74A00D4D316 /* Build configuration list for PBXProject "GetStartedInAppVoice" */ = {
+		92C61CF221DCE74A00D4D316 /* Build configuration list for PBXProject "GetStartedInAppVoiceComplete" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				92C61D0B21DCE74C00D4D316 /* Debug */,
@@ -430,7 +430,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		92C61D0D21DCE74C00D4D316 /* Build configuration list for PBXNativeTarget "GetStartedInAppVoice" */ = {
+		92C61D0D21DCE74C00D4D316 /* Build configuration list for PBXNativeTarget "GetStartedInAppVoiceComplete" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				92C61D0E21DCE74C00D4D316 /* Debug */,
