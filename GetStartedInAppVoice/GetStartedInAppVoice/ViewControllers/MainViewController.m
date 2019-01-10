@@ -8,7 +8,7 @@
 #import "MainViewController.h"
 #import <NexmoClient/NexmoClient.h>
 
-@interface MainViewController () <NXMClientDelegate, NXMCallDelegate>
+@interface MainViewController ()
 @property (weak, nonatomic) IBOutlet UIView *makeCallView;
 @property (weak, nonatomic) IBOutlet UIView *inCallView;
 @property (weak, nonatomic) IBOutlet UIButton *callOtherButton;
@@ -119,63 +119,31 @@
 
 #pragma mark - Tutorial Methods
 #pragma mark Setup
-- (void)setupNexmoClient {//Snippet
-    self.nexmoClient = [[NXMClient alloc] initWithToken:self.selectedUser.token];
-    [self.nexmoClient setDelegate:self];
-    [self.nexmoClient login];
+- (void)setupNexmoClient {
+
 }
 
 #pragma mark NXMClientDelegate
-- (void)connectionStatusChanged:(NXMConnectionStatus)status reason:(NXMConnectionStatusReason)reason {
-    [self setWithConnectionStatus:status];
-}
-
-- (void)incomingCall:(nonnull NXMCall *)call {//Snippet
-    self.ongoingCall = call;
-    [self displayIncomingCallAlert];
-}
 
 #pragma mark Buttons
-- (IBAction)didCallOtherButtonPress:(UIButton *)sender {//Snippet
-    self.isInCall = YES;
-    [self.nexmoClient call:@[self.otherUser.userId] callType:NXMCallTypeInApp delegate:self completion:^(NSError * _Nullable error, NXMCall * _Nullable call) {
-        if(error) {
-            self.isInCall = NO;
-            self.ongoingCall = nil;
-            return;
-        }
-        self.ongoingCall = call;
-        [self setActiveViews];
-    }];
+- (IBAction)didCallOtherButtonPress:(UIButton *)sender {
+
 }
 
-- (IBAction)didEndButtonPress:(UIButton *)sender {//Snippet
-    [self.ongoingCall.myParticipant hangup];
+- (IBAction)didEndButtonPress:(UIButton *)sender {
+
 }
 
 #pragma mark NXMCallDelegate
-- (void)statusChanged:(NXMCallParticipant *)participant {//Snippet
-    if([participant.userId isEqualToString:self.selectedUser.userId]) {
-        [self statusChangedForMyParticipant:participant];
-    } else {
-        [self statusChangedForOtherParticipant:participant];
-    }
-}
 
-- (void)statusChangedForMyParticipant:(NXMCallParticipant *)myParticipant {//snippet
+- (void)statusChangedForMyParticipant:(NXMCallParticipant *)myParticipant {
     [self updateCallStatusLabelWithStatus:myParticipant.status];
     
-    if(myParticipant.status == NXMParticipantStatusCancelled || myParticipant.status == NXMParticipantStatusCompleted) {
-        self.ongoingCall = nil;
-        self.isInCall = NO;
-        [self setActiveViews];
-    }
+    //Handle Hangup
 }
 
-- (void)statusChangedForOtherParticipant:(NXMCallParticipant *)myParticipant {//snippet
-    if(myParticipant.status == NXMParticipantStatusCancelled || myParticipant.status == NXMParticipantStatusCompleted) {
-        [self.ongoingCall.myParticipant hangup];
-    }
+- (void)statusChangedForOtherParticipant:(NXMCallParticipant *)myParticipant {
+
 }
 
 - (void)updateCallStatusLabelWithStatus:(NXMParticipantStatus)status {
@@ -241,33 +209,11 @@
 }
 
 - (void)didPressAnswerIncomingCall {
-    __weak MainViewController *weakSelf = self;
-    [weakSelf.ongoingCall answer:self completionHandler:^(NSError * _Nullable error) {
-        if(error) {
-            [weakSelf displayAlertWithTitle:@"Answer Call" andMessage:@"Error answering call"];
-            weakSelf.ongoingCall = nil;
-            weakSelf.isInCall = NO;
-            [weakSelf setActiveViews];
-            return;
-        }
-        
-        self.isInCall = YES;
-        [weakSelf setActiveViews];
-    }];
+
 }
 
 - (void)didPressDeclineIncomingCall {
-    __weak MainViewController *weakSelf = self;
-    [weakSelf.ongoingCall decline:^(NSError * _Nullable error) {
-        if(error) {
-            [weakSelf displayAlertWithTitle:@"Decline Call" andMessage:@"Error declining call"];
-            return;
-        }
-        
-        weakSelf.ongoingCall = nil;
-        weakSelf.isInCall = NO;
-        [weakSelf setActiveViews];
-    }];
+
 }
 
 
