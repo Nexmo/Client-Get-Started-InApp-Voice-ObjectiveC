@@ -125,6 +125,8 @@
 
 #pragma mark NXMClientDelegate
 
+
+
 #pragma mark Buttons
 - (IBAction)didCallOtherButtonPress:(UIButton *)sender {
 
@@ -136,15 +138,6 @@
 
 #pragma mark NXMCallDelegate
 
-- (void)statusChangedForMyParticipant:(NXMCallParticipant *)myParticipant {
-    [self updateCallStatusLabelWithStatus:myParticipant.status];
-    
-    //Handle Hangup
-}
-
-- (void)statusChangedForOtherParticipant:(NXMCallParticipant *)myParticipant {
-
-}
 
 - (void)updateCallStatusLabelWithStatus:(NXMParticipantStatus)status {
     if(![NSThread isMainThread]){
