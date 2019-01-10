@@ -45,6 +45,7 @@
     self.nameLabel.text = [@"Hello " stringByAppendingString:self.selectedUser.name];
     [self.callOtherButton setTitle:[@"Call " stringByAppendingString:self.otherUser.name] forState:UIControlStateNormal];
     self.isInCall = NO;
+    [self updateCallStatusLabelWithText:@""];
     [self setActiveViews];
 }
 
@@ -139,39 +140,45 @@
 #pragma mark NXMCallDelegate
 
 
-- (void)updateCallStatusLabelWithStatus:(NXMParticipantStatus)status {
+- (void)updateCallStatusLabelWithText:(NSString *)text {
     if(![NSThread isMainThread]){
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self updateCallStatusLabelWithStatus:status];
+            [self updateCallStatusLabelWithText:text];
         });
         return;
     }
+    self.callStatusLabel.text = text;
+}
+
+- (void)updateCallStatusLabelWithStatus:(NXMCallMemberStatus)status {
+    
     NSString *callStatusText = @"";
     switch (status) {
-        case NXMParticipantStatusCancelled:
+        case NXMCallMemberStatusCancelled:
             callStatusText = @"Call Cancelled";
             break;
-        case NXMParticipantStatusCompleted:
+        case NXMCallMemberStatusCompleted:
             callStatusText = @"Call Completed";
             break;
-        case NXMParticipantStatusDialing:
+        case NXMCallMemberStatusDialling:
             callStatusText = @"Dialing";
             break;
-        case NXMParticipantStatusCalling:
+        case NXMCallMemberStatusCalling:
             callStatusText = @"Calling";
             break;
-        case NXMParticipantStatusStarted:
+        case NXMCallMemberStatusStarted:
             callStatusText = @"Call Started";
             break;
-        case NXMParticipantStatusAnswered:
+        case NXMCallMemberStatusAnswered:
             callStatusText = @"Answered";
             break;
         default:
             break;
     }
     
-    self.callStatusLabel.text = callStatusText;
+    [self updateCallStatusLabelWithText:callStatusText];
 }
+
 
 #pragma mark IncomingCall
 
