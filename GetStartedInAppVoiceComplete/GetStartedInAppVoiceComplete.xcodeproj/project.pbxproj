@@ -16,7 +16,6 @@
 		92C61D0A21DCE74C00D4D316 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C61D0921DCE74C00D4D316 /* main.m */; };
 		92C61D1821DD04F600D4D316 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C61D1721DD04F600D4D316 /* MainViewController.m */; };
 		92C61D2021DDE89300D4D316 /* IAVUserDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C61D1F21DDE89300D4D316 /* IAVUserDetails.m */; };
-		F853E02D4F8E814D5D341FB7 /* Pods_GetStartedInAppVoice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B87A92E29CD4F1C960AE9B25 /* Pods_GetStartedInAppVoice.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,7 +47,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F853E02D4F8E814D5D341FB7 /* Pods_GetStartedInAppVoice.framework in Frameworks */,
 				50EC644ECF62D5EDF6726BD5 /* Pods_GetStartedInAppVoiceComplete.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
