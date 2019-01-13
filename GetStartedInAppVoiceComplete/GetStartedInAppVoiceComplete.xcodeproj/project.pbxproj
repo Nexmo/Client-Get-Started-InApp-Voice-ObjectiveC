@@ -16,11 +16,9 @@
 		92C61D0A21DCE74C00D4D316 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C61D0921DCE74C00D4D316 /* main.m */; };
 		92C61D1821DD04F600D4D316 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C61D1721DD04F600D4D316 /* MainViewController.m */; };
 		92C61D2021DDE89300D4D316 /* IAVUserDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C61D1F21DDE89300D4D316 /* IAVUserDetails.m */; };
-		F853E02D4F8E814D5D341FB7 /* Pods_GetStartedInAppVoice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B87A92E29CD4F1C960AE9B25 /* Pods_GetStartedInAppVoice.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0FAC36952C01E760EA418FF9 /* Pods-GetStartedInAppVoice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetStartedInAppVoice.release.xcconfig"; path = "Pods/Target Support Files/Pods-GetStartedInAppVoice/Pods-GetStartedInAppVoice.release.xcconfig"; sourceTree = "<group>"; };
 		39D39134D37047828F22E5AE /* Pods_GetStartedInAppVoiceComplete.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GetStartedInAppVoiceComplete.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		444D1FD92F307D0DD33326CB /* Pods-GetStartedInAppVoiceComplete.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetStartedInAppVoiceComplete.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GetStartedInAppVoiceComplete/Pods-GetStartedInAppVoiceComplete.debug.xcconfig"; sourceTree = "<group>"; };
 		85EE1AF67A7A2B88CC55AE54 /* Pods-GetStartedInAppVoiceComplete.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetStartedInAppVoiceComplete.release.xcconfig"; path = "Pods/Target Support Files/Pods-GetStartedInAppVoiceComplete/Pods-GetStartedInAppVoiceComplete.release.xcconfig"; sourceTree = "<group>"; };
@@ -39,8 +37,6 @@
 		92C61D1721DD04F600D4D316 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		92C61D1E21DDE89300D4D316 /* IAVUserDetails.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IAVUserDetails.h; sourceTree = "<group>"; };
 		92C61D1F21DDE89300D4D316 /* IAVUserDetails.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IAVUserDetails.m; sourceTree = "<group>"; };
-		B87A92E29CD4F1C960AE9B25 /* Pods_GetStartedInAppVoice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GetStartedInAppVoice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C2E4EC82891CC9B35FC88D2E /* Pods-GetStartedInAppVoice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetStartedInAppVoice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GetStartedInAppVoice/Pods-GetStartedInAppVoice.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +44,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F853E02D4F8E814D5D341FB7 /* Pods_GetStartedInAppVoice.framework in Frameworks */,
 				50EC644ECF62D5EDF6726BD5 /* Pods_GetStartedInAppVoiceComplete.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -59,7 +54,6 @@
 		409E637951550151CDDD3DD4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B87A92E29CD4F1C960AE9B25 /* Pods_GetStartedInAppVoice.framework */,
 				39D39134D37047828F22E5AE /* Pods_GetStartedInAppVoiceComplete.framework */,
 			);
 			name = Frameworks;
@@ -123,8 +117,6 @@
 		F920464107695EC972F02E33 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C2E4EC82891CC9B35FC88D2E /* Pods-GetStartedInAppVoice.debug.xcconfig */,
-				0FAC36952C01E760EA418FF9 /* Pods-GetStartedInAppVoice.release.xcconfig */,
 				444D1FD92F307D0DD33326CB /* Pods-GetStartedInAppVoiceComplete.debug.xcconfig */,
 				85EE1AF67A7A2B88CC55AE54 /* Pods-GetStartedInAppVoiceComplete.release.xcconfig */,
 			);
