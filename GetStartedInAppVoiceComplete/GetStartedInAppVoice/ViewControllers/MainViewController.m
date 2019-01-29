@@ -157,7 +157,7 @@
 
 #pragma mark NXMCallDelegate
 - (void)statusChanged:(NXMCallMember *)callMember {
-    if([callMember.userId isEqualToString:self.selectedUser.userId]) {
+    if([callMember.user.userId isEqualToString:self.selectedUser.userId]) {
         [self statusChangedForMyMember:callMember];
     } else {
         [self statusChangedForOtherMember:callMember];
