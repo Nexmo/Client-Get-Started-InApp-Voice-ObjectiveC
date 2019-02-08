@@ -129,11 +129,25 @@
 #pragma mark NXMClientDelegate
 - (void)connectionStatusChanged:(NXMConnectionStatus)status reason:(NXMConnectionStatusReason)reason {
     [self setWithConnectionStatus:status];
+    // handle change in status
+    NSLog(@"👁👁👁 connectionStatusChanged - status: %ld", (long)status);
+    NSLog(@"👁👁👁 connectionStatusChanged - reason: %ld", (long)reason);
 }
 
 - (void)incomingCall:(nonnull NXMCall *)call {
+    // handle an incoming call
+    NSLog(@"📲 📲 📲 Incoming Call: %@", call);
+    
     self.ongoingCall = call;
     [self displayIncomingCallAlert];
+    
+    [call.myCallMember mute:YES];
+}
+
+
+- (void)addedToConversation:(NXMConversation *)conversation {
+    // handle joining a conversation
+    NSLog(@"💬💬💬 Added to %@", conversation.displayName);
 }
 
 #pragma mark Buttons
@@ -141,11 +155,13 @@
     self.isInCall = YES;
     [self.nexmoClient call:@[self.otherUser.userId] callType:NXMCallTypeInApp delegate:self completion:^(NSError * _Nullable error, NXMCall * _Nullable call) {
         if(error) {
+            NSLog(@"❌❌❌ call not created: %@", error);
             self.isInCall = NO;
             self.ongoingCall = nil;
             [self updateCallStatusLabelWithText:@""];
             return;
         }
+        NSLog(@"🤙🤙🤙 call: %@", call);
         self.ongoingCall = call;
         [self setActiveViews];
     }];
@@ -157,6 +173,7 @@
 
 #pragma mark NXMCallDelegate
 - (void)statusChanged:(NXMCallMember *)callMember {
+    NSLog(@"🤙🤙🤙 Call Status changed | participant: %@", callMember.user.name);
     if([callMember.user.userId isEqualToString:self.selectedUser.userId]) {
         [self statusChangedForMyMember:callMember];
     } else {
@@ -253,6 +270,7 @@
     __weak MainViewController *weakSelf = self;
     [weakSelf.ongoingCall answer:self completionHandler:^(NSError * _Nullable error) {
         if(error) {
+            NSLog(@"❌❌❌ error answering call: %@", error.localizedDescription);
             [weakSelf displayAlertWithTitle:@"Answer Call" andMessage:@"Error answering call"];
             weakSelf.ongoingCall = nil;
             weakSelf.isInCall = NO;
@@ -260,7 +278,7 @@
             [weakSelf setActiveViews];
             return;
         }
-        
+        NSLog(@"🤙🤙🤙 call answered");
         self.isInCall = YES;
         [weakSelf setActiveViews];
     }];
@@ -268,12 +286,13 @@
 
 - (void)didPressDeclineIncomingCall {
     __weak MainViewController *weakSelf = self;
-    [weakSelf.ongoingCall decline:^(NSError * _Nullable error) {
+    [weakSelf.ongoingCall reject:^(NSError * _Nullable error) {
         if(error) {
+            NSLog(@"❌❌❌ error declining call: %@", error.localizedDescription);
             [weakSelf displayAlertWithTitle:@"Decline Call" andMessage:@"Error declining call"];
             return;
         }
-        
+        NSLog(@"🤙🤙🤙 call declined");
         weakSelf.ongoingCall = nil;
         weakSelf.isInCall = NO;
         [self updateCallStatusLabelWithText:@""];
