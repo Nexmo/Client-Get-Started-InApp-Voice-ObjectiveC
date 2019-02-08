@@ -257,12 +257,12 @@
         [weakSelf didPressAnswerIncomingCall];
     }];
     
-    UIAlertAction* declineAction = [UIAlertAction actionWithTitle:@"Decline" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [weakSelf didPressDeclineIncomingCall];
+    UIAlertAction* rejectAction = [UIAlertAction actionWithTitle:@"Reject" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [weakSelf didPressRejectIncomingCall];
     }];
     
     [alertController addAction:answerAction];
-    [alertController addAction:declineAction];
+    [alertController addAction:rejectAction];
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
@@ -284,15 +284,15 @@
     }];
 }
 
-- (void)didPressDeclineIncomingCall {
+- (void)didPressRejectIncomingCall {
     __weak MainViewController *weakSelf = self;
     [weakSelf.ongoingCall reject:^(NSError * _Nullable error) {
         if(error) {
-            NSLog(@"❌❌❌ error declining call: %@", error.localizedDescription);
-            [weakSelf displayAlertWithTitle:@"Decline Call" andMessage:@"Error declining call"];
+            NSLog(@"❌❌❌ error rejecting call: %@", error.localizedDescription);
+            [weakSelf displayAlertWithTitle:@"Reject Call" andMessage:@"Error rejecting call"];
             return;
         }
-        NSLog(@"🤙🤙🤙 call declined");
+        NSLog(@"🤙🤙🤙 call rejected");
         weakSelf.ongoingCall = nil;
         weakSelf.isInCall = NO;
         [self updateCallStatusLabelWithText:@""];

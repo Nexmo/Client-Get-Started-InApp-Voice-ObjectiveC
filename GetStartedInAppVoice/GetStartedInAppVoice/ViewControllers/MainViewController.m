@@ -199,12 +199,12 @@
         [weakSelf didPressAnswerIncomingCall];
     }];
     
-    UIAlertAction* declineAction = [UIAlertAction actionWithTitle:@"Decline" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [weakSelf didPressDeclineIncomingCall];
+    UIAlertAction* rejectAction = [UIAlertAction actionWithTitle:@"Reject" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [weakSelf didPressRejectIncomingCall];
     }];
     
     [alertController addAction:answerAction];
-    [alertController addAction:declineAction];
+    [alertController addAction:rejectAction];
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
@@ -212,7 +212,7 @@
 
 }
 
-- (void)didPressDeclineIncomingCall {
+- (void)didPressRejectIncomingCall {
 
 }
 
