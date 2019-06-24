@@ -6,187 +6,220 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		E5CB954DDE2E781D9C66E2AA8CD891BA /* NexmoClient */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = A15B8ADEDB63FB2B919A573359150BA2 /* Build configuration list for PBXAggregateTarget "NexmoClient" */;
+			buildPhases = (
+			);
+			dependencies = (
+			);
+			name = NexmoClient;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
-		5DEF9736CF2B80E86784754B653F8D99 /* Pods-GetStartedInAppVoice-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B679C6CB82A38BA93103FE1604B7EC3B /* Pods-GetStartedInAppVoice-dummy.m */; };
-		6772E0785129D4CC9A7EA0D2E8A83154 /* Pods-GetStartedInAppVoice-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D2870B72FF3E21E660393DCB0529400 /* Pods-GetStartedInAppVoice-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6B90BC6F3C88A74AD693792722B16180 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
+		65F5A8313E104ACAEF24D6AF4E6B8F74 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		784EC2180D351B070586B41467FE5363 /* Pods-GetStartedInAppVoice-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 977CAEB0A1704CAF061C06A2B4FF31E7 /* Pods-GetStartedInAppVoice-dummy.m */; };
+		87AEA2D89154345E34F8D20B97AF9F56 /* Pods-GetStartedInAppVoice-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 068210A691E8F7A798EC49B5F6A52D15 /* Pods-GetStartedInAppVoice-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		25CFD37E30FEB64C22809572CD778F0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E5CB954DDE2E781D9C66E2AA8CD891BA;
+			remoteInfo = NexmoClient;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		0D2870B72FF3E21E660393DCB0529400 /* Pods-GetStartedInAppVoice-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GetStartedInAppVoice-umbrella.h"; sourceTree = "<group>"; };
-		23D9BA49338A5B2136E5BF29C34B544C /* Pods-GetStartedInAppVoice-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GetStartedInAppVoice-resources.sh"; sourceTree = "<group>"; };
-		2A17AEFA6ED87333961A29D901793CEC /* Pods-GetStartedInAppVoice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GetStartedInAppVoice.release.xcconfig"; sourceTree = "<group>"; };
-		2B030526B2501C58AE0AA3CCB224AA11 /* Pods-GetStartedInAppVoice-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GetStartedInAppVoice-acknowledgements.markdown"; sourceTree = "<group>"; };
-		37EA7D63563A0425C9294137838C7939 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		403ABCFFFC82B001718EBFB08BD621E5 /* Pods_GetStartedInAppVoice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_GetStartedInAppVoice.framework; path = "Pods-GetStartedInAppVoice.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5078E926399111768161F9BDF1B174F4 /* NexmoClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NexmoClient.framework; sourceTree = "<group>"; };
-		682898FA677D515DD6198B58B52B8F67 /* Pods-GetStartedInAppVoice.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GetStartedInAppVoice.modulemap"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		990763D3D4EFFA895A627265F58A1F04 /* Pods-GetStartedInAppVoice-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GetStartedInAppVoice-frameworks.sh"; sourceTree = "<group>"; };
-		B679C6CB82A38BA93103FE1604B7EC3B /* Pods-GetStartedInAppVoice-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GetStartedInAppVoice-dummy.m"; sourceTree = "<group>"; };
-		D3EF3721995C2AA8F5835ED07F05C541 /* Pods-GetStartedInAppVoice-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GetStartedInAppVoice-acknowledgements.plist"; sourceTree = "<group>"; };
-		D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		E6848906CDE1345978589FE03401FD7A /* Pods-GetStartedInAppVoice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GetStartedInAppVoice.debug.xcconfig"; sourceTree = "<group>"; };
+		068210A691E8F7A798EC49B5F6A52D15 /* Pods-GetStartedInAppVoice-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GetStartedInAppVoice-umbrella.h"; sourceTree = "<group>"; };
+		27BBEDA3A04B540583DC82684974B7A1 /* NexmoClient.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NexmoClient.xcconfig; sourceTree = "<group>"; };
+		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		4C5B493CA78AC94CC9599ACB6A1F04A1 /* Pods-GetStartedInAppVoice-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GetStartedInAppVoice-Info.plist"; sourceTree = "<group>"; };
+		690BFB8627393CB5BD15CBE01405ED16 /* Pods-GetStartedInAppVoice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GetStartedInAppVoice.debug.xcconfig"; sourceTree = "<group>"; };
+		79437B6148E70F857FFB41BA07B48723 /* Pods-GetStartedInAppVoice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GetStartedInAppVoice.release.xcconfig"; sourceTree = "<group>"; };
+		7FC354E45EAA593439F3D494ED1515E6 /* Pods-GetStartedInAppVoice-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GetStartedInAppVoice-acknowledgements.plist"; sourceTree = "<group>"; };
+		91EE64D7DD5EF80C6ADB33B6D22DF78E /* Pods-GetStartedInAppVoice.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GetStartedInAppVoice.modulemap"; sourceTree = "<group>"; };
+		977CAEB0A1704CAF061C06A2B4FF31E7 /* Pods-GetStartedInAppVoice-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GetStartedInAppVoice-dummy.m"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BACC873FBC4906D13A6DD27B9B71F3CF /* Pods_GetStartedInAppVoice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_GetStartedInAppVoice.framework; path = "Pods-GetStartedInAppVoice.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC1BBAF3898DF09DD32D81A95F7488E8 /* Pods-GetStartedInAppVoice-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GetStartedInAppVoice-frameworks.sh"; sourceTree = "<group>"; };
+		FE3EAEE1FB08F055F170BBF72C7C35FA /* Pods-GetStartedInAppVoice-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GetStartedInAppVoice-acknowledgements.markdown"; sourceTree = "<group>"; };
+		FE8B9A187C7164CEE2F41A7DED520B4A /* NexmoClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NexmoClient.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		48259225780F0808419706D922EEDF16 /* Frameworks */ = {
+		5A489EE5F6F2307524CA4B5727318895 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B90BC6F3C88A74AD693792722B16180 /* Foundation.framework in Frameworks */,
+				65F5A8313E104ACAEF24D6AF4E6B8F74 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		44D5347904CF754D6785B84253F2574A /* iOS */ = {
+		0D62F951FA144BE7CD471F794E5B4486 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */,
+				FE8B9A187C7164CEE2F41A7DED520B4A /* NexmoClient.framework */,
 			);
-			name = iOS;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		558CEC04E94F6C5E543DFE8AF6CF1D62 /* Products */ = {
+		670C47623FA849ED34159858251A5C42 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				403ABCFFFC82B001718EBFB08BD621E5 /* Pods_GetStartedInAppVoice.framework */,
+				E440F8AB7CCC034A4BBB6EE37E4C4CBF /* NexmoClient */,
 			);
-			name = Products;
+			name = Pods;
 			sourceTree = "<group>";
 		};
-		62CA7170838E298858C5B9DAF6FF5390 /* NexmoClient */ = {
+		699EEA3C272A4BFA3462C7104353E4BF /* Pods-GetStartedInAppVoice */ = {
 			isa = PBXGroup;
 			children = (
-				F076D0179057F0EB011346113C20B6FD /* Frameworks */,
-			);
-			name = NexmoClient;
-			path = NexmoClient;
-			sourceTree = "<group>";
-		};
-		733A1E4B7223EDDB2B5C1B3C0105A136 /* Pods-GetStartedInAppVoice */ = {
-			isa = PBXGroup;
-			children = (
-				37EA7D63563A0425C9294137838C7939 /* Info.plist */,
-				682898FA677D515DD6198B58B52B8F67 /* Pods-GetStartedInAppVoice.modulemap */,
-				2B030526B2501C58AE0AA3CCB224AA11 /* Pods-GetStartedInAppVoice-acknowledgements.markdown */,
-				D3EF3721995C2AA8F5835ED07F05C541 /* Pods-GetStartedInAppVoice-acknowledgements.plist */,
-				B679C6CB82A38BA93103FE1604B7EC3B /* Pods-GetStartedInAppVoice-dummy.m */,
-				990763D3D4EFFA895A627265F58A1F04 /* Pods-GetStartedInAppVoice-frameworks.sh */,
-				23D9BA49338A5B2136E5BF29C34B544C /* Pods-GetStartedInAppVoice-resources.sh */,
-				0D2870B72FF3E21E660393DCB0529400 /* Pods-GetStartedInAppVoice-umbrella.h */,
-				E6848906CDE1345978589FE03401FD7A /* Pods-GetStartedInAppVoice.debug.xcconfig */,
-				2A17AEFA6ED87333961A29D901793CEC /* Pods-GetStartedInAppVoice.release.xcconfig */,
+				91EE64D7DD5EF80C6ADB33B6D22DF78E /* Pods-GetStartedInAppVoice.modulemap */,
+				FE3EAEE1FB08F055F170BBF72C7C35FA /* Pods-GetStartedInAppVoice-acknowledgements.markdown */,
+				7FC354E45EAA593439F3D494ED1515E6 /* Pods-GetStartedInAppVoice-acknowledgements.plist */,
+				977CAEB0A1704CAF061C06A2B4FF31E7 /* Pods-GetStartedInAppVoice-dummy.m */,
+				CC1BBAF3898DF09DD32D81A95F7488E8 /* Pods-GetStartedInAppVoice-frameworks.sh */,
+				4C5B493CA78AC94CC9599ACB6A1F04A1 /* Pods-GetStartedInAppVoice-Info.plist */,
+				068210A691E8F7A798EC49B5F6A52D15 /* Pods-GetStartedInAppVoice-umbrella.h */,
+				690BFB8627393CB5BD15CBE01405ED16 /* Pods-GetStartedInAppVoice.debug.xcconfig */,
+				79437B6148E70F857FFB41BA07B48723 /* Pods-GetStartedInAppVoice.release.xcconfig */,
 			);
 			name = "Pods-GetStartedInAppVoice";
 			path = "Target Support Files/Pods-GetStartedInAppVoice";
 			sourceTree = "<group>";
 		};
-		7DB346D0F39D3F0E887471402A8071AB = {
+		6B93CA6BB49DC940190C5590D54A77F5 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				8D8420BF788BD7C96655197BE127981B /* Pods */,
-				558CEC04E94F6C5E543DFE8AF6CF1D62 /* Products */,
-				BBF4845859733ACD0EF6F278CC444A91 /* Targets Support Files */,
+				27BBEDA3A04B540583DC82684974B7A1 /* NexmoClient.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/NexmoClient";
+			sourceTree = "<group>";
+		};
+		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				670C47623FA849ED34159858251A5C42 /* Pods */,
+				D8BC46057BF93B6729245BDA2E6B2B48 /* Products */,
+				E54FCB40840B7C466560F56E2E226930 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		8D8420BF788BD7C96655197BE127981B /* Pods */ = {
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				62CA7170838E298858C5B9DAF6FF5390 /* NexmoClient */,
+				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
 			);
-			name = Pods;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		BBF4845859733ACD0EF6F278CC444A91 /* Targets Support Files */ = {
+		D8BC46057BF93B6729245BDA2E6B2B48 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				733A1E4B7223EDDB2B5C1B3C0105A136 /* Pods-GetStartedInAppVoice */,
+				BACC873FBC4906D13A6DD27B9B71F3CF /* Pods_GetStartedInAppVoice.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E440F8AB7CCC034A4BBB6EE37E4C4CBF /* NexmoClient */ = {
+			isa = PBXGroup;
+			children = (
+				0D62F951FA144BE7CD471F794E5B4486 /* Frameworks */,
+				6B93CA6BB49DC940190C5590D54A77F5 /* Support Files */,
+			);
+			name = NexmoClient;
+			path = NexmoClient;
+			sourceTree = "<group>";
+		};
+		E54FCB40840B7C466560F56E2E226930 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				699EEA3C272A4BFA3462C7104353E4BF /* Pods-GetStartedInAppVoice */,
 			);
 			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				44D5347904CF754D6785B84253F2574A /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F076D0179057F0EB011346113C20B6FD /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				5078E926399111768161F9BDF1B174F4 /* NexmoClient.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		9BECD682D41C22F5D9CE31A767DA20AC /* Headers */ = {
+		C5259DE8969A51101D54D0398837EB59 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6772E0785129D4CC9A7EA0D2E8A83154 /* Pods-GetStartedInAppVoice-umbrella.h in Headers */,
+				87AEA2D89154345E34F8D20B97AF9F56 /* Pods-GetStartedInAppVoice-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		7E669EF1B666CB3AEA4166C3F3F4D96B /* Pods-GetStartedInAppVoice */ = {
+		441B5D84EA89DDFB41B621DC406E05F8 /* Pods-GetStartedInAppVoice */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F17297383CA95649DE53353DC25D1BF6 /* Build configuration list for PBXNativeTarget "Pods-GetStartedInAppVoice" */;
+			buildConfigurationList = 5FC2624789A0463720311C3B721B1E00 /* Build configuration list for PBXNativeTarget "Pods-GetStartedInAppVoice" */;
 			buildPhases = (
-				9BECD682D41C22F5D9CE31A767DA20AC /* Headers */,
-				12FFA74DEDC81E500C645EB69D7BD7DE /* Sources */,
-				48259225780F0808419706D922EEDF16 /* Frameworks */,
-				40434CEE2608369156079EE56C1D778F /* Resources */,
+				C5259DE8969A51101D54D0398837EB59 /* Headers */,
+				1E4E9F8BBB88CCD2E565F15DFFA87C3D /* Sources */,
+				5A489EE5F6F2307524CA4B5727318895 /* Frameworks */,
+				61B70BD9B9EBB97351B52CC828124A3A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				EDEC9BD696A7C571B2026FE845C5BB9A /* PBXTargetDependency */,
 			);
 			name = "Pods-GetStartedInAppVoice";
 			productName = "Pods-GetStartedInAppVoice";
-			productReference = 403ABCFFFC82B001718EBFB08BD621E5 /* Pods_GetStartedInAppVoice.framework */;
+			productReference = BACC873FBC4906D13A6DD27B9B71F3CF /* Pods_GetStartedInAppVoice.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
 			};
-			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 558CEC04E94F6C5E543DFE8AF6CF1D62 /* Products */;
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = D8BC46057BF93B6729245BDA2E6B2B48 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7E669EF1B666CB3AEA4166C3F3F4D96B /* Pods-GetStartedInAppVoice */,
+				E5CB954DDE2E781D9C66E2AA8CD891BA /* NexmoClient */,
+				441B5D84EA89DDFB41B621DC406E05F8 /* Pods-GetStartedInAppVoice */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		40434CEE2608369156079EE56C1D778F /* Resources */ = {
+		61B70BD9B9EBB97351B52CC828124A3A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -196,57 +229,27 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		12FFA74DEDC81E500C645EB69D7BD7DE /* Sources */ = {
+		1E4E9F8BBB88CCD2E565F15DFFA87C3D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5DEF9736CF2B80E86784754B653F8D99 /* Pods-GetStartedInAppVoice-dummy.m in Sources */,
+				784EC2180D351B070586B41467FE5363 /* Pods-GetStartedInAppVoice-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin XCBuildConfiguration section */
-		6941D388990AF535618B62B209B4CCD3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2A17AEFA6ED87333961A29D901793CEC /* Pods-GetStartedInAppVoice.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-GetStartedInAppVoice/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-GetStartedInAppVoice/Pods-GetStartedInAppVoice.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
+/* Begin PBXTargetDependency section */
+		EDEC9BD696A7C571B2026FE845C5BB9A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = NexmoClient;
+			target = E5CB954DDE2E781D9C66E2AA8CD891BA /* NexmoClient */;
+			targetProxy = 25CFD37E30FEB64C22809572CD778F0C /* PBXContainerItemProxy */;
 		};
-		8DDFA5FA8D4131BFD96E5E26F3672644 /* Debug */ = {
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		196DFA3E4A09A28224918543529A1885 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -278,8 +281,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -307,14 +308,14 @@
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		980F1B3BCBD7554F7CBCB5D0BF153606 /* Debug */ = {
+		1C111B2C22B61202C7D74A7542BD82D5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6848906CDE1345978589FE03401FD7A /* Pods-GetStartedInAppVoice.debug.xcconfig */;
+			baseConfigurationReference = 79437B6148E70F857FFB41BA07B48723 /* Pods-GetStartedInAppVoice.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -327,7 +328,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-GetStartedInAppVoice/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-GetStartedInAppVoice/Pods-GetStartedInAppVoice-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -345,12 +346,48 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
+			name = Release;
+		};
+		4219ECD24D73C61BAEB7DF441DCEDE88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27BBEDA3A04B540583DC82684974B7A1 /* NexmoClient.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		795DEB9255CA936B6D85903398AAB947 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27BBEDA3A04B540583DC82684974B7A1 /* NexmoClient.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
 			name = Debug;
 		};
-		D5F759C82752B2EB010DB3CD3D69707C /* Release */ = {
+		B01D14FDC83DCF9D4BE53066BEA96D05 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -382,8 +419,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -407,33 +442,80 @@
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
+		EB11D2C0436D2C445005A809AD959115 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 690BFB8627393CB5BD15CBE01405ED16 /* Pods-GetStartedInAppVoice.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-GetStartedInAppVoice/Pods-GetStartedInAppVoice-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-GetStartedInAppVoice/Pods-GetStartedInAppVoice.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8DDFA5FA8D4131BFD96E5E26F3672644 /* Debug */,
-				D5F759C82752B2EB010DB3CD3D69707C /* Release */,
+				196DFA3E4A09A28224918543529A1885 /* Debug */,
+				B01D14FDC83DCF9D4BE53066BEA96D05 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F17297383CA95649DE53353DC25D1BF6 /* Build configuration list for PBXNativeTarget "Pods-GetStartedInAppVoice" */ = {
+		5FC2624789A0463720311C3B721B1E00 /* Build configuration list for PBXNativeTarget "Pods-GetStartedInAppVoice" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				980F1B3BCBD7554F7CBCB5D0BF153606 /* Debug */,
-				6941D388990AF535618B62B209B4CCD3 /* Release */,
+				EB11D2C0436D2C445005A809AD959115 /* Debug */,
+				1C111B2C22B61202C7D74A7542BD82D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A15B8ADEDB63FB2B919A573359150BA2 /* Build configuration list for PBXAggregateTarget "NexmoClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				795DEB9255CA936B6D85903398AAB947 /* Debug */,
+				4219ECD24D73C61BAEB7DF441DCEDE88 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 }

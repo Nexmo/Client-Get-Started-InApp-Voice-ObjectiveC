@@ -153,7 +153,7 @@
 #pragma mark Buttons
 - (IBAction)didCallOtherButtonPress:(UIButton *)sender {
     self.isInCall = YES;
-    [self.nexmoClient call:@[self.otherUser.userId] callType:NXMCallTypeInApp delegate:self completion:^(NSError * _Nullable error, NXMCall * _Nullable call) {
+    [self.nexmoClient call:@[self.otherUser.userId] callHandler:NXMCallHandlerInApp delegate:self completion:^(NSError * _Nullable error, NXMCall * _Nullable call) {
         if(error) {
             NSLog(@"❌❌❌ call not created: %@", error);
             self.isInCall = NO;
